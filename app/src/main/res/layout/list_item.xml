@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="11.5sp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/speakerImageContainer">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_centerInParent="true"
+            android:id="@+id/talkImage"
+            android:layout_width="52sp"
+            android:layout_height="52sp" />
+
+        <TextView
+            android:id="@+id/talkTime"
+            style="@style/timeInCircularImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/talksContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/speakerImageContainer"
+        android:layout_toRightOf="@+id/speakerImageContainer"
+        android:paddingLeft="11.5sp"
+        android:orientation="vertical" />
+
+
+</RelativeLayout>

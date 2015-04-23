@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/eastern_blue">
+
+            <Space
+                android:id="@+id/imageSpace"
+                android:layout_width="82sp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                style="@style/talkDetailRightColumn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imageSpace"
+                android:orientation="vertical"
+                android:paddingTop="9sp">
+
+                <TextView
+                    android:id="@+id/speakerDisplayName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Martin Odersky"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/talkTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8sp"
+                    android:text="The evolution of Scala"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/plenary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6sp"
+                    android:text="@string/plenary"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- TALK -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/talkStartTimeContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    style="@style/roundedImage.talkDetail"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:fadeDuration="300"
+                    fresco:failureImageScaleType="centerInside"
+                    fresco:placeholderImage="@color/wait_color"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:pressedStateOverlayImage="@color/red"
+                    fresco:roundAsCircle="true"
+                    fresco:roundBottomLeft="false"
+                    fresco:roundBottomRight="false"
+                    fresco:roundTopLeft="true"
+                    fresco:roundTopRight="false"
+                    fresco:roundedCornerRadius="5dp"
+                    fresco:roundingBorderWidth="1dp" />
+
+                <TextView
+                    android:id="@+id/talkStartTime"
+                    style="@style/timeInCircularImage" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                style="@style/talkDetailRightColumn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/talkStartTimeContainer"
+                android:layout_toRightOf="@+id/talkStartTimeContainer"
+
+                android:background="@drawable/bottom_grey_line">
+
+                <TextView
+                    android:id="@+id/talkBrief"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/lorem_ipsum" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/speakersBioContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+
+    </LinearLayout>
+</ScrollView>

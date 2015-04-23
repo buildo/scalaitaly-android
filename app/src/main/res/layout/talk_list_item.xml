@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="11.5sp">
+
+    <LinearLayout
+        android:id="@+id/talkInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/speakerDisplayName"
+            style="@style/boldDisplayName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Martin Odersky" />
+
+        <TextView
+            android:id="@+id/talkTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The evolution of Scala" />
+
+        <TextView
+            android:id="@+id/talkRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Plenary" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="8sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/talkInfo"
+        android:layout_toRightOf="@+id/talkInfo" />
+
+</RelativeLayout>
