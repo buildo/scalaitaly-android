@@ -59,11 +59,15 @@ public class ListItemView extends LinearLayout {
             talkTime.setText(event.getHour().toFuzzyString());
         }
 
+
+        talksContainerLayout.removeAllViews();
+
         for(Talk talk: event.getTalks()) {
             TalkItemView talkItemView = TalkItemView_.build(getContext());
-            talkItemView.bind(talk);
+            talkItemView.bind(event, talk);
             talksContainerLayout.addView(talkItemView);
 
         }
     }
+
 }

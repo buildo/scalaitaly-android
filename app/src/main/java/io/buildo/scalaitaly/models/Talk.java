@@ -1,6 +1,8 @@
 package io.buildo.scalaitaly.models;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -13,11 +15,14 @@ public class Talk {
     private List<Speaker> mSpeakers;
     private String mTitle;
     private int speakersNames;
+    private Collection<String> mTags;
+    private Room mRoom;
 
 
     public Talk(String title) {
         mTitle = title;
         mSpeakers = new ArrayList<>();
+        mTags = new ArrayList<>();
     }
 
 
@@ -84,5 +89,21 @@ public class Talk {
             speakersNames = speakersNames.concat(String.format(currentFormatter, mSpeakers.get(i).getDisplayName()));
         }
         return speakersNames;
+    }
+
+    public void addTags(String... tags) {
+        Collections.addAll(mTags, tags);
+    }
+
+    public void addRoom(Room room) {
+        mRoom = room;
+    }
+
+    public boolean hasRoom() {
+        return mRoom != null;
+    }
+
+    public Room getRoom() {
+        return mRoom;
     }
 }

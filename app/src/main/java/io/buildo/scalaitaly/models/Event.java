@@ -1,5 +1,7 @@
 package io.buildo.scalaitaly.models;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -15,6 +17,7 @@ public class Event {
 
     private Hour mHour;
 
+    private int mId;
     private ArrayList<Talk> mTalks;
     private int mType;
     private int mImage;
@@ -64,5 +67,17 @@ public class Event {
 
     public ArrayList<Talk> getTalks() {
         return mTalks;
+    }
+
+    public static int getHourForTalkById(int talkId) {
+        return 0;
+    }
+
+    public void setId(int id) {
+        mId = id;
+    }
+
+    public int getId() {
+        return mId;
     }
 }

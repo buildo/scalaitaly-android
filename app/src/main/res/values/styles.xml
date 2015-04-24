@@ -14,7 +14,8 @@
     <style name="talkDetailRightColumn">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingLeft">4sp</item>
+        <item name="android:paddingLeft">@dimen/talkDetailRightColumnLeftPadding</item>
+        <item name="android:layout_marginLeft">82sp</item>
     </style>
 
     <style name="roundedImage.talkDetail">
@@ -27,6 +28,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="timeInCircularImage">

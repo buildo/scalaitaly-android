@@ -35,11 +35,14 @@ public class TalkItemView extends LinearLayout {
     @ViewById(R.id.talkTitle)
     TextView talkTitleView;
 
+    @ViewById(R.id.talkRoom)
+    TextView talkRoomView;
+
     public TalkItemView(Context context) {
         super(context);
     }
 
-    public void bind(final Talk talk) {
+    public void bind(final Event event, final Talk talk) {
 
         talkTitleView.setText(talk.getTitle());
 
@@ -47,6 +50,11 @@ public class TalkItemView extends LinearLayout {
             speakerDisplayNameView.setText(talk.getSpeaker().getDisplayName());
         } else if (talk.hasManySpeakers()) {
             speakerDisplayNameView.setText(talk.getSpeakersNames());
+        }
+
+        if (talk.hasRoom()) {
+            talkRoomView.setText(talk.getRoom().getRoomName());
+            talkRoomView.setTextColor(getResources().getColor(talk.getRoom().getRoomColor()));
         }
 
 
@@ -57,6 +65,7 @@ public class TalkItemView extends LinearLayout {
                 TalkDetailActivity_
                         .intent(getContext())
                         .talkId(talk.getId())
+                        .eventId(event.getId())
                         .start();
                 ((ActionBarActivity) getContext()).overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
             }

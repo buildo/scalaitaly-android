@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="43sp"
     android:background="@color/concrete"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/eventTime"
         android:layout_width="82sp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:gravity="center"
-        android:layout_height="wrap_content" />
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/eventTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/eventTime" />
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/eventTime"
+        android:layout_toRightOf="@+id/eventTime"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </RelativeLayout>

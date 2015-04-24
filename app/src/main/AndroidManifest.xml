@@ -19,6 +19,7 @@
         </activity>
         <activity
             android:name=".TalkDetailActivity_"
+            android:launchMode="singleTask"
             android:label="@string/title_talk_detail"
             android:parentActivityName=".MainActivity_" >
             <meta-data
