@@ -56,7 +56,8 @@ public class ProgramAdapter extends RecyclerViewAdapterBase<BreakItemView, ListI
 
     @Override
     protected void onBindItemViewHolder(ListItemView itemView, int position) {
-        itemView.bind(mProgram.get(position));
+        boolean showBottomLine = getItemViewType(position + 1) != RecyclerViewAdapterBase.HEADER_TYPE;
+        itemView.bind(mProgram.get(position), showBottomLine);
     }
 
     @Override

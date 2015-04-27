@@ -38,7 +38,7 @@ public class ListItemView extends LinearLayout {
         super(context);
     }
 
-    public void bind(Event event) {
+    public void bind(Event event, boolean showBottomLine) {
         GenericDraweeHierarchyBuilder builder = new GenericDraweeHierarchyBuilder(getResources());
         RoundingParams roundingParams = new RoundingParams()
                 .setRoundAsCircle(true)
@@ -53,6 +53,10 @@ public class ListItemView extends LinearLayout {
 
         talkImage.setHierarchy(hierarchy);
         talkImage.setImageURI(Uri.parse(AssetsUri.getAssetsUri(event.getImage())));
+
+        if (showBottomLine) {
+            setBackgroundResource(R.drawable.bottom_grey_line);
+        }
 
         if (event.hasHour()) {
             talkTime.setText(event.getHour().toFuzzyString());

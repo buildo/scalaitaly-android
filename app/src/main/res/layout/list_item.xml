@@ -2,26 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="11.5sp"
     android:orientation="horizontal"
-    android:background="@drawable/bottom_grey_line">
+    android:padding="11.5sp">
 
     <RelativeLayout
+        android:id="@+id/speakerImageContainer"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/speakerImageContainer">
+        android:layout_height="match_parent">
+
         <com.facebook.drawee.view.SimpleDraweeView
-            android:layout_centerInParent="true"
             android:id="@+id/talkImage"
             android:layout_width="52sp"
-            android:layout_height="52sp" />
+            android:layout_height="52sp"
+            android:layout_centerInParent="true" />
 
         <TextView
             android:id="@+id/talkTime"
             style="@style/timeInCircularImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 
@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/speakerImageContainer"
         android:layout_toRightOf="@+id/speakerImageContainer"
-        android:paddingLeft="11.5sp"
-        android:orientation="vertical" />
+        android:orientation="vertical"
+        android:paddingLeft="11.5sp" />
 
 
 </RelativeLayout>

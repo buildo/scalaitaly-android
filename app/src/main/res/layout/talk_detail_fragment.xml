@@ -46,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bottom_grey_line"
-                    android:paddingTop="5sp"
+                    android:paddingTop="20sp"
                     android:text="@string/lorem_ipsum" />
 
                 <org.apmem.tools.layouts.FlowLayout
