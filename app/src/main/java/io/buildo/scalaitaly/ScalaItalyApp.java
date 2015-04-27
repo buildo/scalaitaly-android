@@ -4,8 +4,8 @@ import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
-import io.buildo.scalaitaly.data.Program;
-import io.buildo.scalaitaly.data.Talks;
+import io.buildo.scalaitaly.utils.Program;
+import io.buildo.scalaitaly.utils.Talks;
 
 /**
  * Created by andreaascari on 22/04/15.

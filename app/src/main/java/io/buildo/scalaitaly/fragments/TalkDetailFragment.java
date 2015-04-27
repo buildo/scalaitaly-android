@@ -16,7 +16,6 @@ import org.androidannotations.annotations.ViewById;
 import org.apmem.tools.layouts.FlowLayout;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,8 +24,8 @@ import java.util.Random;
 import io.buildo.scalaitaly.R;
 import io.buildo.scalaitaly.core.InjectedFragment;
 import io.buildo.scalaitaly.core.SemiCircleDrawable;
-import io.buildo.scalaitaly.data.Program;
-import io.buildo.scalaitaly.data.Talks;
+import io.buildo.scalaitaly.utils.Program;
+import io.buildo.scalaitaly.utils.Talks;
 import io.buildo.scalaitaly.models.Event;
 import io.buildo.scalaitaly.models.Hour;
 import io.buildo.scalaitaly.models.Speaker;
