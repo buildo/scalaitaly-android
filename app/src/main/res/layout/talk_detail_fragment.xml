@@ -3,6 +3,7 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -45,12 +46,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bottom_grey_line"
+                    android:paddingTop="5sp"
                     android:text="@string/lorem_ipsum" />
 
-                <com.wefika.flowlayout.FlowLayout
+                <org.apmem.tools.layouts.FlowLayout
                     android:id="@+id/tagsContainer"
+                    style="@style/talkDetailRightColumn"
+                    android:paddingTop="10sp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/talkBrief" />
 
             </RelativeLayout>
 
@@ -70,10 +75,10 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/circularImagesOverlay"
+        android:layout_alignParentRight="true"
         android:layout_toEndOf="@+id/circularImagesOverlay"
+        android:layout_toRightOf="@+id/circularImagesOverlay"
         android:background="@color/eastern_blue"
         android:orientation="vertical"
         android:paddingLeft="@dimen/talkDetailRightColumnLeftPadding"
@@ -116,12 +121,14 @@
         android:layout_alignParentStart="true">
 
         <View
+            android:id="@+id/topFrame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/circularImagesCropper"
             android:background="@color/eastern_blue" />
 
         <View
+            android:id="@+id/leftFrame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toLeftOf="@+id/circularImagesCropper"
@@ -129,11 +136,13 @@
             android:background="@color/eastern_blue" />
 
         <View
+            android:id="@+id/rightFrame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/circularImagesCropper"
             android:layout_toEndOf="@+id/circularImagesCropper"
+            android:layout_toRightOf="@+id/circularImagesCropper"
             android:background="@color/eastern_blue" />
+
         <View
             android:id="@+id/circularImagesCropper"
             android:layout_width="51sp"

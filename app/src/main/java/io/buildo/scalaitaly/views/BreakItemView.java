@@ -7,12 +7,8 @@ import android.widget.TextView;
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 
-import java.util.HashMap;
-import java.util.List;
-
 import io.buildo.scalaitaly.R;
 import io.buildo.scalaitaly.models.Event;
-import io.buildo.scalaitaly.models.Hour;
 
 /**
  * Created by andreaascari on 23/04/15.

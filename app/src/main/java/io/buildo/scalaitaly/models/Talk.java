@@ -1,7 +1,6 @@
 package io.buildo.scalaitaly.models;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,8 +14,9 @@ public class Talk {
     private List<Speaker> mSpeakers;
     private String mTitle;
     private int speakersNames;
-    private Collection<String> mTags;
+    private List<String> mTags;
     private Room mRoom;
+    private int mTalkImage;
 
 
     public Talk(String title) {
@@ -105,5 +105,30 @@ public class Talk {
 
     public Room getRoom() {
         return mRoom;
+    }
+
+    public boolean hasTags() {
+        return mTags != null && mTags.size() > 0;
+    }
+
+    public List<String> getTags() {
+        return mTags;
+    }
+
+    public void setTalkImage(int talkImage) {
+        mTalkImage = talkImage;
+    }
+
+    public int getImage() {
+        if (mTalkImage > 0) {
+            return mTalkImage;
+        } else if (mSpeakers != null && mSpeakers.size() > 0) {
+            Speaker firstSpeaker = mSpeakers.get(0);
+            if (firstSpeaker != null && firstSpeaker.hasAvatar()) {
+                return firstSpeaker.getAvatar();
+            }
+        }
+
+        return 0;
     }
 }

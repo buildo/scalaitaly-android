@@ -16,6 +16,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingLeft">@dimen/talkDetailRightColumnLeftPadding</item>
         <item name="android:layout_marginLeft">82sp</item>
+        <item name="android:paddingRight">5sp</item>
     </style>
 
     <style name="roundedImage.talkDetail">

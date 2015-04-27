@@ -11,7 +11,6 @@ import io.buildo.scalaitaly.R;
 import io.buildo.scalaitaly.adapters.ProgramAdapter;
 import io.buildo.scalaitaly.core.InjectedFragment;
 import io.buildo.scalaitaly.data.Program;
-import io.buildo.scalaitaly.data.Talks;
 
 /**
  * Created by andreaascari on 22/04/15.

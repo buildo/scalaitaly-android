@@ -1,16 +1,10 @@
 package io.buildo.scalaitaly.views;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.facebook.drawee.generic.GenericDraweeHierarchy;
-import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
-import com.facebook.drawee.generic.RoundingParams;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
@@ -18,9 +12,7 @@ import org.androidannotations.annotations.ViewById;
 import io.buildo.scalaitaly.R;
 import io.buildo.scalaitaly.TalkDetailActivity_;
 import io.buildo.scalaitaly.models.Event;
-import io.buildo.scalaitaly.models.Speaker;
 import io.buildo.scalaitaly.models.Talk;
-import io.buildo.scalaitaly.utils.AssetsUri;
 
 /**
  * Created by andreaascari on 22/04/15.

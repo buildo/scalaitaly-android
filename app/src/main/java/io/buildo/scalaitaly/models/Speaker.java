@@ -1,7 +1,5 @@
 package io.buildo.scalaitaly.models;
 
-import io.buildo.scalaitaly.R;
-
 /**
  * Created by andreaascari on 22/04/15.
  */
@@ -15,16 +13,6 @@ public class Speaker {
 
     public Speaker(String firstName, String lastName) {
         mFirstName = firstName;
-        mLastName = lastName;
-        mAvatarResource = R.mipmap.martin_odersky;
-    }
-
-    public void setFirstName(String firstName) {
-        mFirstName = firstName;
-    }
-
-
-    public void setLastName(String lastName) {
         mLastName = lastName;
     }
 
@@ -54,5 +42,9 @@ public class Speaker {
 
     public void setCompany(String company) {
         mCompany = company;
+    }
+
+    public boolean hasAvatar() {
+        return mAvatarResource > 0;
     }
 }

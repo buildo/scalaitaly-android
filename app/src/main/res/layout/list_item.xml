@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="11.5sp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/bottom_grey_line">
 
     <RelativeLayout
         android:layout_width="wrap_content"

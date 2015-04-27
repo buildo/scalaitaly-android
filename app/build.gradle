@@ -46,5 +46,5 @@ dependencies {
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
     compile 'com.facebook.fresco:fresco:0.3.0'
-    compile "com.wefika:flowlayout:0.4.0"
+    compile 'org.apmem.tools:layouts:1.8@aar'
 }

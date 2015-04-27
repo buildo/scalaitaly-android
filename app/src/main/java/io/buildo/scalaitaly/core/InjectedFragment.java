@@ -2,7 +2,6 @@ package io.buildo.scalaitaly.core;
 
 import android.support.v4.app.Fragment;
 
-import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
 

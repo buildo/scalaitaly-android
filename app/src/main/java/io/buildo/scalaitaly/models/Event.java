@@ -1,7 +1,5 @@
 package io.buildo.scalaitaly.models;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -26,7 +24,6 @@ public class Event {
     public Event(int type) {
         mType = type;
         mTalks = new ArrayList<>();
-        mImage = R.mipmap.martin_odersky;
     }
 
     public void addTalks(Talk... talks) {
@@ -50,6 +47,12 @@ public class Event {
     }
 
     public int getImage() {
+        if (mTalks != null && mTalks.size() > 0) {
+            Talk firstTalk = mTalks.get(0);
+            if (firstTalk != null) {
+                return firstTalk.getImage();
+            }
+        }
         return mImage;
     }
 
@@ -69,9 +72,6 @@ public class Event {
         return mTalks;
     }
 
-    public static int getHourForTalkById(int talkId) {
-        return 0;
-    }
 
     public void setId(int id) {
         mId = id;

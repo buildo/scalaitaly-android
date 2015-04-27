@@ -1,7 +1,5 @@
 package io.buildo.scalaitaly.models;
 
-import io.buildo.scalaitaly.models.Event;
-
 /**
  * Created by andreaascari on 23/04/15.
  */

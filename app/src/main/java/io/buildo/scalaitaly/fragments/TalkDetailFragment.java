@@ -1,26 +1,26 @@
 package io.buildo.scalaitaly.fragments;
 
-import android.graphics.drawable.ShapeDrawable;
 import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Space;
 import android.widget.TextView;
 
-import com.wefika.flowlayout.FlowLayout;
 
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.FragmentArg;
 import org.androidannotations.annotations.ViewById;
+import org.apmem.tools.layouts.FlowLayout;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
 import io.buildo.scalaitaly.R;
 import io.buildo.scalaitaly.core.InjectedFragment;
@@ -33,12 +33,15 @@ import io.buildo.scalaitaly.models.Speaker;
 import io.buildo.scalaitaly.models.Talk;
 import io.buildo.scalaitaly.views.SpeakerBioView;
 import io.buildo.scalaitaly.views.SpeakerBioView_;
+import io.buildo.scalaitaly.views.TagItemView;
+import io.buildo.scalaitaly.views.TagItemView_;
 
 /**
  * Created by andreaascari on 22/04/15.
  */
 @EFragment(R.layout.talk_detail_fragment)
 public class TalkDetailFragment extends InjectedFragment {
+
 
     @FragmentArg
     int eventId;
@@ -50,8 +53,20 @@ public class TalkDetailFragment extends InjectedFragment {
     @ViewById(R.id.headerBackground)
     RelativeLayout headerBackgroundLayout;
 
+    @ViewById(R.id.header)
+    LinearLayout headerLayout;
+
     @ViewById(R.id.circularImagesOverlay)
     RelativeLayout circularImagesOverlay;
+
+    @ViewById(R.id.topFrame)
+    View topFrameView;
+
+    @ViewById(R.id.leftFrame)
+    View leftFrameView;
+
+    @ViewById(R.id.rightFrame)
+    View rightFrameView;
 
     @ViewById(R.id.circularImagesCropper)
     View circularImagesCropperView;
@@ -86,7 +101,6 @@ public class TalkDetailFragment extends InjectedFragment {
 
 
 
-
     public void onViewsInjected() {
 
         final View.OnLayoutChangeListener headerLayoutChangeListener = new View.OnLayoutChangeListener() {
@@ -101,16 +115,6 @@ public class TalkDetailFragment extends InjectedFragment {
 
         headerBackgroundLayout.addOnLayoutChangeListener(headerLayoutChangeListener);
 
-        SemiCircleDrawable semiCircleDrawable  = new SemiCircleDrawable(
-                getResources().getColor(android.R.color.transparent),
-                getResources().getColor(R.color.eastern_blue),
-                SemiCircleDrawable.Direction.TOP
-        );
-        if (Build.VERSION.SDK_INT >= 16) {
-            circularImagesCropperView.setBackground(semiCircleDrawable);
-        } else {
-            circularImagesCropperView.setBackgroundDrawable(semiCircleDrawable);
-        }
 
         Event event = Program.getEventById(eventId);
         Talk talk = Talks.get(talkId);
@@ -124,10 +128,12 @@ public class TalkDetailFragment extends InjectedFragment {
 
         if (talk != null) {
             talkTitle.setText(talk.getTitle());
+
             if (talk.hasRoom()) {
                 talkRoomView.setText(talk.getRoom().getRoomName());
-                talkRoomView.setTextColor(getResources().getColor(talk.getRoom().getRoomColor()));
+                setHeaderBackgroundColor(talk.getRoom().getRoomColor());
             }
+
             if (talk.hasOneSpeaker()) {
                 speakerDisplayNameView.setText(talk.getSpeaker().getDisplayName());
             } else if (talk.hasManySpeakers()) {
@@ -142,8 +148,47 @@ public class TalkDetailFragment extends InjectedFragment {
                 speakersBioContainer.addView(speakerBioView);
             }
 
+            if (talk.hasTags()) {
+                tagsContainerLayout.removeAllViews();
+                List<Integer> tagsColor = new LinkedList<>(Arrays.asList(
+                        R.color.matisse,
+                        R.color.red_violet,
+                        R.color.vida_loca
+                ));
+                Collections.shuffle(tagsColor);
+                Random rand = new Random();
+                for (String tag: talk.getTags()) {
+                    int randomIndex = rand.nextInt(tagsColor.size());
+                    TagItemView tagItemView = TagItemView_.build(getActivity());
+                    tagItemView.bind(tag, tagsColor.get(randomIndex));
+                    tagsColor.remove(randomIndex);
+
+                    tagsContainerLayout.addView(tagItemView);
+                }
+            }
+
         }
 
+    }
+
+    private void setHeaderBackgroundColor(int roomResourceColor) {
+        int roomColor = getResources().getColor(roomResourceColor);
+        headerBackgroundLayout.setBackgroundColor(roomColor);
+        SemiCircleDrawable semiCircleDrawable  = new SemiCircleDrawable(
+                getResources().getColor(android.R.color.transparent),
+                roomColor,
+                SemiCircleDrawable.Direction.TOP
+        );
+
+        headerLayout.setBackgroundColor(roomColor);
+        if (Build.VERSION.SDK_INT >= 16) {
+            circularImagesCropperView.setBackground(semiCircleDrawable);
+        } else {
+            circularImagesCropperView.setBackgroundDrawable(semiCircleDrawable);
+        }
+        topFrameView.setBackgroundColor(roomColor);
+        leftFrameView.setBackgroundColor(roomColor);
+        rightFrameView.setBackgroundColor(roomColor);
     }
 
     @Override

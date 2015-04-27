@@ -1,6 +1,5 @@
 package io.buildo.scalaitaly.core;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
